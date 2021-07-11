@@ -92,9 +92,12 @@ const CallPage = () => {
           });
         }
 
-
-
         if (!isAdmin) {
+          peer = new Peer({
+            initiator: false,
+            trickle: false,
+            stream: stream,
+          });
           getRecieverCode();
         }
 
